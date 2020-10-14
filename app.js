@@ -57,6 +57,8 @@ var allow;
 
 const routes = require("./routes");
 
+app.use(express.static('public'));
+
 app.use("/api/*", function(req, res, next) {
     console.log(req.url);
     //update
