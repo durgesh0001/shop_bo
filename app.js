@@ -48,7 +48,6 @@ var sequelize_service_1 = require("./utils/services/sequelize.service");
 var seq = new sequelize_service_1.SequelizeService();
 var encryption_service_1 = require("./utils/services/encryption.service");
 
-var port = configServer.port || 4000;
 
 var enc = new encryption_service_1.EncryptionService();
 var wlog = new logging_service_2.WLog();
@@ -212,11 +211,13 @@ app.use("/api/*", function(req, res, next) {
 });
 //routes start
 app.use('/api',routes);
+
+var port = normalizePort(process.env.PORT || '3000')
 //routes end
 const serversocket = http
     .createServer(app)
-    .listen(configServer.port, function() {
-        console.log("server running on port " + configServer.port);
+    .listen(port, function() {
+        console.log("server running on port " + port);
     });
 var clients = {};
 global.io = require("socket.io")(serversocket);
@@ -229,4 +230,4 @@ global.io.on("connection", function(socket) {
         delete clients[socket.id];
     });
 });
-console.log("Node Server started on port " + configServer.port);
+console.log("Node Server started on port " + port);
