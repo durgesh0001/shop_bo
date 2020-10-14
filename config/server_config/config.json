@@ -1,0 +1,36 @@
+{
+  "PROD": {
+    "whitelist_domain": [
+      "http://localhost:3001",
+      "http://localhost:4200/"
+    ],
+    "encryption": false,
+    "encryption_key": "01234567890qewdwvtiopasdfghjklzxcvbnm",
+    "port": 3000,
+    "debug": true,
+    "http": {
+      "timeout": 15000
+    },
+    "token": {
+      "key": "@@@dur@@@s"
+    },
+    "db": {
+      "dialect": "postgres",
+      "host": "john.db.elephantsql.com",
+      "schema": "public",
+      "username": "mvnlmctv",
+      "password": "rwXAXvgrppTh-KAOFEIUUFZ3xeYOtw0r",
+      "name": "mvnlmctv",
+      "port": 5432,
+      "timezone": "+08:00",
+      "pool": {
+        "min": 0,
+        "max": 5,
+        "idle": 10000
+      },
+      "dialectOptions": {
+        "ssl": false
+      }
+    }
+  }
+}
