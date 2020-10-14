@@ -1,5 +1,4 @@
 global.__base = __dirname + '/';
-global.__logs = __dirname + './logs/';
 global.__instanceId = 0;
 
 

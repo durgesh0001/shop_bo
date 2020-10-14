@@ -27,7 +27,7 @@ function createLogger(name){
         type: 'rotating-file',
         period: '1d',
         level: 'info',
-        path: __logs + 'applicationLog.log'
+        path: 'applicationLog.log'
       }
     ]
   });
